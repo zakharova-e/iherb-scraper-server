@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "github.com/zakharova-e/iherb-scraper-server/iherbCatalog";
+
+package iherbCatalog;
+
+service IHerbCatalogService {
+  rpc GetProductData(ProductDataRequest) returns (ProductDataResponse) {}
+}
+
+message ProductDataRequest {
+    uint32 ProductId = 1;
+}
+
+message ProductDataResponse {
+    string Name = 1;
+    float BasePrice = 2; 
+    string BasePriceFormatted = 3; 
+    StockStatusEnum StockStatus = 4;
+}
+
+enum StockStatusEnum{
+    UndefinedStatus = 0;
+    InStock = 1;
+    OutOfStock = 2;
+}
