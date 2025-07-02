@@ -1,24 +1,24 @@
 package server
 
 import (
- "context"
- pb "github.com/zakharova-e/iherb-scraper-server/internal/iherbCatalog"
- grpcH "github.com/zakharova-e/iherb-scraper-server/internal/catalog/delivery/grpc"
- "google.golang.org/grpc"
- "net"
- "fmt"
- "log"
+	"context"
+	"fmt"
+	grpcH "github.com/zakharova-e/iherb-scraper-server/internal/catalog/delivery/grpc"
+	pb "github.com/zakharova-e/iherb-scraper-server/internal/iherbCatalog"
+	"google.golang.org/grpc"
+	"log"
+	"net"
 )
 
 var server = grpc.NewServer()
 
 type IherbGrpcServer struct {
- 	pb.UnimplementedIHerbCatalogServiceServer
+	pb.UnimplementedIHerbCatalogServiceServer
 	handler *grpcH.Handler
 }
 
-func NewIherbGrpcServer(handler *grpcH.Handler) *IherbGrpcServer{
-	if handler == nil{
+func NewIherbGrpcServer(handler *grpcH.Handler) *IherbGrpcServer {
+	if handler == nil {
 		panic("grpc handler not specified")
 	}
 	iherbServer := IherbGrpcServer{}
@@ -27,7 +27,7 @@ func NewIherbGrpcServer(handler *grpcH.Handler) *IherbGrpcServer{
 	return &iherbServer
 }
 
-func (s *IherbGrpcServer) Run(){
+func (s *IherbGrpcServer) Run() {
 	lis, err := net.Listen("tcp", ":50051")
 	if err != nil {
 		panic(fmt.Sprintf("failed to listen on port 50051: %v", err))
@@ -38,6 +38,6 @@ func (s *IherbGrpcServer) Run(){
 	}
 }
 
-func (s *IherbGrpcServer) GetProductData(ctx context.Context, request *pb.ProductDataRequest) (*pb.ProductDataResponse, error){
-	return s.handler.GetProductData(ctx,request)
+func (s *IherbGrpcServer) GetProductData(ctx context.Context, request *pb.ProductDataRequest) (*pb.ProductDataResponse, error) {
+	return s.handler.GetProductData(ctx, request)
 }
