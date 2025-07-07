@@ -48,30 +48,30 @@ type ProductData struct {
 		Imperial string `json:"imperial"`
 		Metric   string `json:"metric"`
 	} `json:"packageQuantities"`
-	Dimensions   string `json:"dimensions"`
-	ActualWeight string `json:"actualWeight"`
-	Description               string        `json:"description"`
-	Ingredients               string        `json:"ingredients"`
-	SpecialNote               string        `json:"specialNote"`
-	SuggestedUse              string        `json:"suggestedUse"`
-	SupplementFacts           string        `json:"supplementFacts"`
-	Warnings                  string        `json:"warnings"`
-	IsAvailableToPurchase     bool          `json:"isAvailableToPurchase"`
-	URLName                   string        `json:"urlName"`
-	ID                        int           `json:"id"`
-	URL                       string        `json:"url"`
-	ProductStatus             int           `json:"productStatus"`
-	IsDiscontinued            bool          `json:"isDiscontinued"`
-	IsComingSoon              bool          `json:"isComingSoon"`
-	QtyLimit                  int           `json:"qtyLimit"`
-	QuantityLimit             int           `json:"quantityLimit"`
-	AutoShipQuantityLimit     int           `json:"autoShipQuantityLimit"`
-	SpecialDealInfo           interface{}   `json:"specialDealInfo"`
-	TrialDiscountInfo         interface{}   `json:"trialDiscountInfo"`
-	DiscountType              int           `json:"discountType"`
-	DiscountDisplayType       int           `json:"discountDisplayType"`
-	IsInCartDiscount          bool          `json:"isInCartDiscount"`
-	SalesDiscountPercentage   float64           `json:"salesDiscountPercentage"`
+	Dimensions                            string        `json:"dimensions"`
+	ActualWeight                          string        `json:"actualWeight"`
+	Description                           string        `json:"description"`
+	Ingredients                           string        `json:"ingredients"`
+	SpecialNote                           string        `json:"specialNote"`
+	SuggestedUse                          string        `json:"suggestedUse"`
+	SupplementFacts                       string        `json:"supplementFacts"`
+	Warnings                              string        `json:"warnings"`
+	IsAvailableToPurchase                 bool          `json:"isAvailableToPurchase"`
+	URLName                               string        `json:"urlName"`
+	ID                                    int           `json:"id"`
+	URL                                   string        `json:"url"`
+	ProductStatus                         int           `json:"productStatus"`
+	IsDiscontinued                        bool          `json:"isDiscontinued"`
+	IsComingSoon                          bool          `json:"isComingSoon"`
+	QtyLimit                              int           `json:"qtyLimit"`
+	QuantityLimit                         int           `json:"quantityLimit"`
+	AutoShipQuantityLimit                 int           `json:"autoShipQuantityLimit"`
+	SpecialDealInfo                       interface{}   `json:"specialDealInfo"`
+	TrialDiscountInfo                     interface{}   `json:"trialDiscountInfo"`
+	DiscountType                          int           `json:"discountType"`
+	DiscountDisplayType                   int           `json:"discountDisplayType"`
+	IsInCartDiscount                      bool          `json:"isInCartDiscount"`
+	SalesDiscountPercentage               float64       `json:"salesDiscountPercentage"`
 	RootCategoryID                        int           `json:"rootCategoryId"`
 	RootCategoryName                      string        `json:"rootCategoryName"`
 	EnRootCategoryName                    string        `json:"enRootCategoryName"`

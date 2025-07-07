@@ -15,7 +15,7 @@ func main() {
 		log.Println(err)
 	}
 	config.LoadConfig()
-	catalogRepo := iherbApi.NewIherbApiRepository(nil,nil)
+	catalogRepo := iherbApi.NewIherbApiRepository()
 	catalogUsecase := usecase.NewCatalogUsecase(catalogRepo)
 	grpcHandler := grpc.NewGrpcHandler(catalogUsecase)
 	srv := server.NewIherbGrpcServer(grpcHandler)

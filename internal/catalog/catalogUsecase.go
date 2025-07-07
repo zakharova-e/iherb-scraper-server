@@ -1,4 +1,4 @@
-package catalog 
+package catalog
 
 import (
 	"context"
@@ -6,5 +6,5 @@ import (
 )
 
 type ICatalogUsecase interface {
-	GetProductData(ctx context.Context,productId uint32) (*models.ProductData,error)
+	GetProductData(ctx context.Context, productId uint32) (*models.ProductData, error)
 }
